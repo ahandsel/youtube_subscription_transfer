@@ -4,7 +4,11 @@
 ## References used:
 * 
 * [Running selenium on MacOS using chromedriver](https://medium.com/@KelvinMwinuka/running-selenium-on-macos-using-chromedriver-96ef851282b5)
-* [Code documentation on selenium-python]
+* [Code documentation on selenium-python](https://selenium-python.readthedocs.io/)
+
+https://selenium-python.readthedocs.io/installation.html
+
+https://addons.mozilla.org/en-GB/firefox/addon/selenium-ide/
 
 
 ## Credit: following code was used for this project:
