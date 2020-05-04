@@ -2,7 +2,6 @@
 
 
 ## References used:
-* 
 * [Running selenium on MacOS using chromedriver](https://medium.com/@KelvinMwinuka/running-selenium-on-macos-using-chromedriver-96ef851282b5)
 * [Code documentation on selenium-python](https://selenium-python.readthedocs.io/)
 
