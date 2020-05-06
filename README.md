@@ -10,7 +10,7 @@
 ## Step A - Download subscription_manager.xm for old & new YouTube accounts:
 1. Login into the **old** YouTube acount that you want to export the subscriptions from.
 
-2. Go to the Manage Subscriptions page: [www.youtube.com/subscription_manager](www.youtube.com/subscription_manager)
+2. Go to the Manage Subscriptions page: [www.youtube.com/subscription_manager](https://www.youtube.com/subscription_manager)
 
 3. Scroll to the buttom to the **Export to RSS readers** section.
 
@@ -36,7 +36,12 @@
     ```
     * Add `pyenv init` to your shell to enable shims and autocompletion.
       * Please make sure eval "$(pyenv init -)" is placed toward the end of the shell configuration file since it manipulates PATH during the initialization.
+    * For bash:
     ```bash
+    echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bash_profile
+    ```
+    * For zsh:
+    ```zsh
     echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc
     ```
     * Restart your shell so the path changes take effect. You can now begin using pyenv.
@@ -72,13 +77,28 @@
     ```bash
     pip install selenium
     ```
-3. Drivers - Install FireFox geckodriver
+3. Drivers - Install FireFox's geckodriver
   * [geckodriver/releases](https://github.com/mozilla/geckodriver/releases)
+  * Selenium requires a driver to interface with a browser in your PATH (/usr/bin or /usr/local/bin)
+    * Firefox broswer --> requires GeckoDriver driver
   * Under **Assets**, install the geckodriver-v0.26.0-macos.tar.gz
   * Then running the following command to address the [MacOS Notarization](https://firefox-source-docs.mozilla.org/testing/geckodriver/Notarization.html) known problem:
   ```bash
   xattr -r -d com.apple.quarantine geckodriver-v0.26.0-macos.tar.gz
   ```
+  * Run the following in your terminal
+    ```bash
+  sudo nano /etc/paths
+    ```
+  * Insert the path to the geckodriver download at the bottom of the file
+    * My PATH is: /Users/beta/Downloads/geckodriver
+  * control+x to quit
+y to save
+& return to confirm
+Confirming New PATH
+Close out & relaunch Terminal
+Run echo $PATH
+Amongst the jumbled output, you should see your newly added PATH (look for keyword: geckodriver)
 
 3. Install [Firefox](https://www.mozilla.org/en-US/firefox/new/)
   * Firefox 76.0 is used
@@ -92,3 +112,7 @@
   * It will take some time.
   * Note YouTube will temporary block you if you have more that 80 subscriptions.
   * Just restart the script in a few hours.
+
+
+
+  https://addons.mozilla.org/en-GB/firefox/addon/selenium-ide/
