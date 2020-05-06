@@ -33,6 +33,7 @@
     ```bash
     brew update
     brew install pyenv
+    brew install openssl readline sqlite3 xz zlib
     ```
     * Add `pyenv init` to your shell to enable shims and autocompletion.
       * Please make sure eval "$(pyenv init -)" is placed toward the end of the shell configuration file since it manipulates PATH during the initialization.
@@ -116,5 +117,12 @@
   * Just restart the script in a few hours.
 
 
+## References used:
+* [Running selenium on MacOS using chromedriver](https://medium.com/@KelvinMwinuka/running-selenium-on-macos-using-chromedriver-96ef851282b5)
+* [Code documentation on selenium-python](https://selenium-python.readthedocs.io/)
+* [Set up Selenium & GeckoDriver \(Mac\)](https://medium.com/dropout-analytics/selenium-and-geckodriver-on-mac-b411dbfe61bc)
+* [The Python virtual environment with Pyenv & Pipenv](https://dev.to/writingcode/the-python-virtual-environment-with-pyenv-pipenv-3mlo)
+* [How to install and Set up Python on Mac](https://dev.to/brohittv/how-to-install-and-set-up-python-on-mac-29fd?signin=true)
+* [Python Development on macOS with pyenv](https://medium.com/python-every-day/python-development-on-macos-with-pyenv-2509c694a808)
 
-  https://addons.mozilla.org/en-GB/firefox/addon/selenium-ide/
+https://addons.mozilla.org/en-GB/firefox/addon/selenium-ide/
