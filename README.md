@@ -50,7 +50,7 @@
     ```
 
 3. Install Python using pyenv
-  * Quick list of pyenv commands:
+    * Quick list of pyenv commands:
 
     | pyenv commands | action |
     |--|--|
@@ -61,28 +61,30 @@
     | `pyenv local <version>` | Set the local version by cd'ing into the repo then.. |
     | `python --version` | Check current python version |
 
-  * Install [python](https://www.python.org/downloads/) version 3.8.2 and set as the default version
+    * Install [python](https://www.python.org/downloads/) version 3.8.2 and set as the default version
     ```bash
     pyenv install 3.8.2
     pyenv global 3.8.2
     ```
 
 ## Step C - Install Selenium
-* [Selenium Python Installation](https://selenium-python.readthedocs.io/installation.html)
-1. Update pip (you already installed pip when you installed Python version >= 3.4)
-    ```bash
-    pip install --upgrade pip
-    ```
-2. Downloading Python bindings for Selenium
-    ```bash
-    pip install selenium
-    ```
-3. Drivers - Install FireFox's geckodriver
-  * [geckodriver/releases](https://github.com/mozilla/geckodriver/releases)
-  * Selenium requires a driver to interface with a browser in your PATH (/usr/bin or /usr/local/bin)
+  * [Selenium Python Installation](https://selenium-python.readthedocs.io/installation.html)
+  1. Update pip (you already installed pip when you installed Python version >= 3.4)
+      ```bash
+      pip install --upgrade pip
+      ```
+  2. Downloading Python bindings for Selenium
+      ```bash
+      pip install selenium
+      ```
+
+## Step D - Install FireFox's geckodriver
+    * Drivers - Install FireFox's geckodriver
+    * [geckodriver/releases](https://github.com/mozilla/geckodriver/releases)
+    * Selenium requires a driver to interface with a browser in your PATH (/usr/bin or /usr/local/bin)
     * Firefox broswer --> requires GeckoDriver driver
-  * Under **Assets**, install the geckodriver-v0.26.0-macos.tar.gz
-  * Then running the following command to address the [MacOS Notarization](https://firefox-source-docs.mozilla.org/testing/geckodriver/Notarization.html) known problem:
+    * Under **Assets**, install the geckodriver-v0.26.0-macos.tar.gz
+    * Then running the following command to address the [MacOS Notarization](https://firefox-source-docs.mozilla.org/testing/geckodriver/Notarization.html) known problem:
   ```bash
   xattr -r -d com.apple.quarantine geckodriver-v0.26.0-macos.tar.gz
   ```
@@ -101,17 +103,17 @@ Run echo $PATH
 Amongst the jumbled output, you should see your newly added PATH (look for keyword: geckodriver)
 
 3. Install [Firefox](https://www.mozilla.org/en-US/firefox/new/)
-  * Firefox 76.0 is used
+    * Firefox 76.0 is used
 
 4. Place the three files in one folder
-  * youtube_migrate.py
-  * subscription_manager-**source**.xml
-  * subscription_manager-***destination***.xml
+    * youtube_migrate.py
+    * subscription_manager-**source**.xml
+    * subscription_manager-***destination***.xml
 
 5. Run script, manually login, and go to drink coffee.
-  * It will take some time.
-  * Note YouTube will temporary block you if you have more that 80 subscriptions.
-  * Just restart the script in a few hours.
+    * It will take some time.
+    * Note YouTube will temporary block you if you have more that 80 subscriptions.
+    * Just restart the script in a few hours.
 
 
 
