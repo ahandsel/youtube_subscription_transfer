@@ -83,25 +83,30 @@
   * [geckodriver/releases](https://github.com/mozilla/geckodriver/releases)
   * Selenium requires a driver to interface with a browser in your PATH (/usr/bin or /usr/local/bin)
     * Firefox broswer --> requires GeckoDriver driver
-  * Under [**Assets**](https://github.com/mozilla/geckodriver/releases), install the geckodriver-v0.26.0-macos.tar.gz
-  * Then running the following command to address the [MacOS Notarization](https://firefox-source-docs.mozilla.org/testing/geckodriver/Notarization.html) known problem:
+  1. Under [**Assets**](https://github.com/mozilla/geckodriver/releases), install the geckodriver-v0.26.0-macos.tar.gz
+  2. Then running the following command to address the [MacOS Notarization](https://firefox-source-docs.mozilla.org/testing/geckodriver/Notarization.html) known problem:
   ```bash
   xattr -r -d com.apple.quarantine geckodriver-v0.26.0-macos.tar.gz
   ```
-  * Run the following in your terminal
+  3. Run the following in your terminal
     ```bash
   sudo nano /etc/paths
     ```
-  * Insert the path to the geckodriver download at the bottom of the file
+  4. Insert the path to the geckodriver download at the bottom of the file
     * My PATH is: /Users/beta/Downloads/geckodriver
-  * `control`+`x` to quit
-  * `y` to save
-  * return to confirm
-  * Confirming New PATH: relaunch Terminal and run
-  ```bash
-  echo $PATH
-  ```
-  * Your path to geckodriver should be included in the output
+    * `control`+`x` to quit
+    * `y` to save
+    * return to confirm
+    * Confirming New PATH: relaunch Terminal and run
+    ```bash
+    echo $PATH
+    ```
+    * Your path to geckodriver should be included in the output
+  5. Geckodriver executable needs to be in PATH
+      ```bash
+      sudo cp geckodriver /usr/local/bin
+      ```
+
 
 3. Install [Firefox](https://www.mozilla.org/en-US/firefox/new/)
     * Firefox 76.0 is used
@@ -116,6 +121,9 @@
   * Note YouTube will temporary block you if you have more that 80 subscriptions.
   * Just restart the script in a few hours.
 
+## ERROR: selenium.common.exceptions.WebDriverException: Message: 'geckodriver' executable needs to be in PATH.
+* cd to the folder with the geckodriver and run the following command: `sudo cp geckodriver /usr/local/bin`
+
 
 ## References used:
 * [Running selenium on MacOS using chromedriver](https://medium.com/@KelvinMwinuka/running-selenium-on-macos-using-chromedriver-96ef851282b5)
@@ -126,3 +134,7 @@
 * [Python Development on macOS with pyenv](https://medium.com/python-every-day/python-development-on-macos-with-pyenv-2509c694a808)
 
 https://addons.mozilla.org/en-GB/firefox/addon/selenium-ide/
+
+
+export PATH=$PATH:/path/to/directory/of/executable/downloaded/in/previous/step
+
