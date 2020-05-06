@@ -79,12 +79,11 @@
       ```
 
 ## Step D - Install FireFox's geckodriver
-    * Drivers - Install FireFox's geckodriver
-    * [geckodriver/releases](https://github.com/mozilla/geckodriver/releases)
-    * Selenium requires a driver to interface with a browser in your PATH (/usr/bin or /usr/local/bin)
+  * [geckodriver/releases](https://github.com/mozilla/geckodriver/releases)
+  * Selenium requires a driver to interface with a browser in your PATH (/usr/bin or /usr/local/bin)
     * Firefox broswer --> requires GeckoDriver driver
-    * Under **Assets**, install the geckodriver-v0.26.0-macos.tar.gz
-    * Then running the following command to address the [MacOS Notarization](https://firefox-source-docs.mozilla.org/testing/geckodriver/Notarization.html) known problem:
+  * Under [**Assets**](https://github.com/mozilla/geckodriver/releases), install the geckodriver-v0.26.0-macos.tar.gz
+  * Then running the following command to address the [MacOS Notarization](https://firefox-source-docs.mozilla.org/testing/geckodriver/Notarization.html) known problem:
   ```bash
   xattr -r -d com.apple.quarantine geckodriver-v0.26.0-macos.tar.gz
   ```
@@ -94,26 +93,27 @@
     ```
   * Insert the path to the geckodriver download at the bottom of the file
     * My PATH is: /Users/beta/Downloads/geckodriver
-  * control+x to quit
-y to save
-& return to confirm
-Confirming New PATH
-Close out & relaunch Terminal
-Run echo $PATH
-Amongst the jumbled output, you should see your newly added PATH (look for keyword: geckodriver)
+  * `control`+`x` to quit
+  * `y` to save
+  * return to confirm
+  * Confirming New PATH: relaunch Terminal and run
+  ```bash
+  echo $PATH
+  ```
+  * Your path to geckodriver should be included in the output
 
 3. Install [Firefox](https://www.mozilla.org/en-US/firefox/new/)
     * Firefox 76.0 is used
 
-4. Place the three files in one folder
-    * youtube_migrate.py
-    * subscription_manager-**source**.xml
-    * subscription_manager-***destination***.xml
+## Step E - Place the three files in one folder
+  * youtube_migrate.py
+  * subscription_manager-**source**.xml
+  * subscription_manager-***destination***.xml
 
-5. Run script, manually login, and go to drink coffee.
-    * It will take some time.
-    * Note YouTube will temporary block you if you have more that 80 subscriptions.
-    * Just restart the script in a few hours.
+## Step F - Run script, manually login, and go to drink coffee.
+  * It will take some time.
+  * Note YouTube will temporary block you if you have more that 80 subscriptions.
+  * Just restart the script in a few hours.
 
 
 
