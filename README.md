@@ -22,26 +22,73 @@
 6. Repeate for steps 1 to 4 for your **new** YouTube account that you want to import the subscriptions into.
   * Rename the file as **subscription_manager-destination.xml**
 
-## Step 2 - Install Python + Selenium
+## Step B - Install pyenv & Python
 * Following assumes MacOS Catalina
 1. Install brew | [brew.sh](https://brew.sh/)
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-```
-2. Install Pyenv | [Pyenv Installation](https://github.com/pyenv/pyenv#installation)
-```bash
-$ brew update
-$ brew install pyenv
-```
+    ```bash
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    ```
+
+2. Install pyenv | [pyenv Installation](https://github.com/pyenv/pyenv#installation)
+    ```bash
+    brew update
+    brew install pyenv
+    ```
+    * Add `pyenv init` to your shell to enable shims and autocompletion.
+      * Please make sure eval "$(pyenv init -)" is placed toward the end of the shell configuration file since it manipulates PATH during the initialization.
+    ```bash
+    echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc
+    ```
+    * Restart your shell so the path changes take effect. You can now begin using pyenv.
+    ```bash
+    exec "$SHELL"
+    ```
+
+3. Install Python using pyenv
+  * Quick list of pyenv commands:
+
+    | pyenv commands | action |
+    |--|--|
+    | `pyenv install --list` | lists out the python versions |
+    | `pyenv install <version>` | Installs the selected version |
+    | `pyenv versions` | lists out all installed versions|
+    |  `pyenv global <version>` | Set the global or default python version |
+    | `pyenv local <version>` | Set the local version by cd'ing into the repo then.. |
+    | `python --version` | Check current python version |
+
+  * Install [python](https://www.python.org/downloads/) version 3.8.2 and set as the default version
+    ```bash
+    pyenv install 3.8.2
+    pyenv global 3.8.2
+    ```
+
+## Step C - Install Selenium
 * [Selenium Python Installation](https://selenium-python.readthedocs.io/installation.html)
+1. Update pip (you already installed pip when you installed Python version >= 3.4)
+    ```bash
+    pip install --upgrade pip
+    ```
+2. Downloading Python bindings for Selenium
+    ```bash
+    pip install selenium
+    ```
+3. Drivers - Install FireFox geckodriver
+  * [geckodriver/releases](https://github.com/mozilla/geckodriver/releases)
+  * Under **Assets**, install the geckodriver-v0.26.0-macos.tar.gz
+  * Then running the following command to address the [MacOS Notarization](https://firefox-source-docs.mozilla.org/testing/geckodriver/Notarization.html) known problem:
+  ```bash
+  xattr -r -d com.apple.quarantine geckodriver-v0.26.0-macos.tar.gz
+  ```
 
+3. Install [Firefox](https://www.mozilla.org/en-US/firefox/new/)
+  * Firefox 76.0 is used
 
+4. Place the three files in one folder
+  * youtube_migrate.py
+  * subscription_manager-**source**.xml
+  * subscription_manager-***destination***.xml
 
- 3  Repeat step 2 for the account you would like to import subscriptions into.
-    Save the file as subscription_manager-destination.xml.
-
- 4. Run script, manually login, and go to drink coffee.
-    It will take some time.
-
-Note YouTube will temporary block you if you have more that 80 subscriptions.
-Just restart the script in a few hours.
+5. Run script, manually login, and go to drink coffee.
+  * It will take some time.
+  * Note YouTube will temporary block you if you have more that 80 subscriptions.
+  * Just restart the script in a few hours.
