@@ -92,3 +92,7 @@ JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: 
 JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: Invalid autocomplete selectedIndex
 1588774915126	Marionette	INFO	Stopped listening on port 60269
 console.warn: services.settings: main/whats-new-panel sync interrupted by shutdown
+1588816637562	Marionette	INFO	Stopped listening on port 60198
+1588816638493	Marionette	INFO	Stopped listening on port 59973
+1588816639151	Marionette	INFO	Stopped listening on port 59894
+1588816639865	Marionette	INFO	Stopped listening on port 59751
