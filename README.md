@@ -85,30 +85,20 @@
     * Firefox broswer --> requires GeckoDriver driver
   1. Under [**Assets**](https://github.com/mozilla/geckodriver/releases), install the geckodriver-v0.26.0-macos.tar.gz
   2. Then running the following command to address the [MacOS Notarization](https://firefox-source-docs.mozilla.org/testing/geckodriver/Notarization.html) known problem:
-  ```bash
-  xattr -r -d com.apple.quarantine geckodriver-v0.26.0-macos.tar.gz
-  ```
+     * `  xattr -r -d com.apple.quarantine geckodriver-v0.26.0-macos.tar.gz`
   3. Run the following in your terminal
-    ```bash
-  sudo nano /etc/paths
-    ```
+       * `sudo nano /etc/paths`
   4. Insert the path to the geckodriver download at the bottom of the file
     * My PATH is: /Users/beta/Downloads/geckodriver
     * `control`+`x` to quit
     * `y` to save
     * return to confirm
     * Confirming New PATH: relaunch Terminal and run
-    ```bash
-    echo $PATH
-    ```
+      * `echo $PATH`
     * Your path to geckodriver should be included in the output
   5. Geckodriver executable needs to be in PATH
-      ```bash
-      sudo cp geckodriver /usr/local/bin
-      ```
-
-
-3. Install [Firefox](https://www.mozilla.org/en-US/firefox/new/)
+     * `sudo cp geckodriver /usr/local/bin`
+  6. Install [Firefox](https://www.mozilla.org/en-US/firefox/new/)
     * Firefox 76.0 is used
 
 ## Step E - Place the three files in one folder
