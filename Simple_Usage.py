@@ -3,7 +3,7 @@ from selenium.webdriver.common.keys import Keys
 
 driver = webdriver.Firefox()
 driver = webdriver.Firefox()
-driver.get("http://www.python.org")
+driver.get("http://www.npr.org")
 assert "Python" in driver.title
 elem = driver.find_element_by_name("q")
 elem.clear()
