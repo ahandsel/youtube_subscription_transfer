@@ -1,0 +1,21 @@
+{
+  "id": "d0a61fc5-8b0a-4d73-86d5-c8694d161bf6",
+  "version": "2.0",
+  "name": "youtube",
+  "url": "",
+  "tests": [{
+    "id": "d02027cb-00ed-44b1-a11a-2db87098f73f",
+    "name": "Untitled",
+    "commands": []
+  }],
+  "suites": [{
+    "id": "522fed84-c020-433b-ba45-e02ce8f035cf",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["d02027cb-00ed-44b1-a11a-2db87098f73f"]
+  }],
+  "urls": [],
+  "plugins": []
+}
