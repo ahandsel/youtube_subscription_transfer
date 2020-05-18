@@ -34,7 +34,7 @@ import re
 
 def main():
 
-    notYetSubscribed = list(set(load_subcriptions('subscription_manager-source.xml')) - set(load_subcriptions('subscription_manager.xml')))
+    notYetSubscribed = list(set(load_subcriptions('subscription_manager-source.xml')) - set(load_subcriptions('subscription_manager-destination.xml')))
 
     driver = webdriver.Firefox()
     sign_in(driver)
